@@ -87,14 +87,13 @@ let animales = [
 /** funcion para eliminar */
 
 function eliminar(){
-    let buscar = prompt("Ingrese el nombre de la mascota que desea eliminar")
-    let mascota;
-    for (const animal of animales) {
-        mascota = (buscar === animal.nombre) ? animales.delete(animal) : "Lo sentimos, pero tu mascota no esta registrada"
-        
+    let buscar = prompt("Ingrese el nombre de la mascota que desea eliminar:");
+    animales = animales.filter(animal => animal.nombre !== buscar);
+    if (animales.length < 3) {  
+      return animales;
+    } else {
+      return "Lo sentimos, pero tu mascota no está registrada";
     }
-    return animales
-
     }
 
     console.log(eliminar(animales));
