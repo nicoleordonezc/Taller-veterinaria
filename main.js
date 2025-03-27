@@ -65,13 +65,36 @@ let animales = [
 
 /** funcion para actualizar */
 
-function buscador(){
-    let buscar = prompt("Ingrese el nombre de su mascota")
+// function actualizar(){
+//     let buscar = prompt("Ingrese el nombre de su mascota")
+//     let mascota;
+//     let nuevoES;
+//     for (const animal of animales) {
+//         mascota = (buscar === animal.nombre) ? nuevoES = prompt("Ingrese el nuevo estado de salud") : "Lo sentimos, pero tu mascota no esta registrada"
+//         animal.estadoDeSalud=nuevoES   
+     
+//         for (const animal of animales) {
+//             mascota = (buscar === animal.nombre) ? animal : "Lo sentimos, pero tu mascota no esta registrada"
+                
+//             }
+//         }
+//     return mascota
+    
+// }
+
+// console.log(actualizar(animales));
+
+/** funcion para eliminar */
+
+function eliminar(){
+    let buscar = prompt("Ingrese el nombre de la mascota que desea eliminar")
     let mascota;
     for (const animal of animales) {
-        mascota = (buscar === animal.nombre) ? animal : "Lo sentimos, pero tu mascota no esta registrada"
+        mascota = (buscar === animal.nombre) ? animales.delete(animal) : "Lo sentimos, pero tu mascota no esta registrada"
         
     }
-    return mascota
-    
-}
+    return animales
+
+    }
+
+    console.log(eliminar(animales));
